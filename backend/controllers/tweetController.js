@@ -22,7 +22,7 @@ export const createTweet = async (req, res) => {
         })
     } catch (error) {
         console.log(error);
-    }
+     }
 }
 export const deleteTweet = async (req, res) => {
     try {

@@ -91,7 +91,7 @@ export const bookmark = async (req, res) => {
             return res.status(200).json({
                 message: "Removed from bookmarks."
             });
-        } else {
+        } else { 
             // bookmark
             await User.findByIdAndUpdate(loggedInUserId, { $push: { bookmarks: tweetId } });
             return res.status(200).json({
@@ -102,6 +102,7 @@ export const bookmark = async (req, res) => {
         console.log(error);
     }
 };
+
 export const getMyProfile = async (req, res) => {
     try {
         const id = req.params.id;
@@ -135,18 +136,18 @@ export const follow = async (req, res) => {
     try {
         const loggedInUserId = req.body.id;
         const userId = req.params.id;
-        const loggedInUser = await User.findById(loggedInUserId);//patel
-        const user = await User.findById(userId);//keshav
+        const loggedInUser = await User.findById(loggedInUserId);//prashant
+        const user = await User.findById(userId);//shivam
         if (!user.followers.includes(loggedInUserId)) {
             await user.updateOne({ $push: { followers: loggedInUserId } });
             await loggedInUser.updateOne({ $push: { following: userId } });
         } else {
             return res.status(400).json({
-                message: `User already followed to ${user.name}`
+                message: `${loggedInUser.name} has already followed ${user.name}`
             })
         };
         return res.status(200).json({
-            message: `${loggedInUser.name} just follow to ${user.name}`,
+            message: `${loggedInUser.name} just followed ${user.name}`,
             success: true
         })
     } catch (error) {
@@ -168,7 +169,7 @@ export const unfollow = async (req, res) => {
             })
         };
         return res.status(200).json({
-            message: `${loggedInUser.name} unfollow to ${user.name}`,
+            message: `${loggedInUser.name} unfollowed ${user.name}`,
             success: true
         })
     } catch (error) {
