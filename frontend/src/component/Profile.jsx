@@ -5,7 +5,7 @@ import Avatar from "react-avatar";
 import useGetProfile from '../hooks/useGetProfile'
 import { useSelector } from 'react-redux'
 const Profile = () => {
-    const { user } = useSelector(store => store.user);
+    const { user ,profile} = useSelector(store => store.user);
     useGetProfile(user?._id);
 
     return (
@@ -16,7 +16,7 @@ const Profile = () => {
                         <IoMdArrowBack size="24px" />
                     </Link>
                     <div className='ml-2'>
-                        <h1 className='font-bold text-lg'>Prashant Tiwari</h1>
+                        <h1 className='font-bold text-lg'>{profile?.name}</h1>
                         <p className='text-gray-500 text-sm'>20 post</p>
                     </div>
                 </div>
@@ -28,8 +28,8 @@ const Profile = () => {
                     <button className='px-4 py-1 hover:bg-gray-200 rounded-full border border-gray-400'>Edit Profile</button>
                 </div>
                 <div className='m-4'>
-                    <h1 className='font-bold text-xl'>Prashant Tiwari</h1>
-                    <p>@prashanttiwari</p>
+                    <h1 className='font-bold text-xl'>{profile?.name }</h1>
+                    <p>{`@${profile?.username}`}</p>
                 </div>
                 <div className='m-4 text-sm'>
                     <p>Building the web, one line of code at a time. 💻 Also exploring the world of machine learning. 🤖</p>
