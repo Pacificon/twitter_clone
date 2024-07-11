@@ -5,8 +5,9 @@ import Avatar from "react-avatar";
 import useGetProfile from '../hooks/useGetProfile'
 import { useSelector } from 'react-redux'
 const Profile = () => {
-    const { user ,profile} = useSelector(store => store.user);
-    useGetProfile(user?._id);
+    const { user, profile } = useSelector(store => store.user);
+    const { id } = useParams();
+    useGetProfile(id);
 
     return (
         <div className='w-[50%] border-l border-r border-gray-200'>
