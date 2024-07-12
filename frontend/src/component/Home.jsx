@@ -16,7 +16,7 @@ function Home() {
         if (!user) {
             navigate('/login')
         }
-    },[])
+    }, [])
 
     useOtherUsers(user?._id);
     useGetMyTweets(user?._id);
