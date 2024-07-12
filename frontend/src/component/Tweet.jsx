@@ -45,12 +45,12 @@ const Tweet = ({ tweet }) => {
         <div className='border-b border-gray-200'>
             <div>
                 <div className='flex p-4'>
-                    <Avatar src="https://pbs.twimg.com/profile_images/1703261403237502976/W0SFbJVS_400x400.jpg" size="40" round={true} />
+                    <Avatar src="https://pbs.twimg.com/profile_images/1750937589022892033/nea_yxSK_400x400.jpg" size="40" round={true} />
                     <div className=' ml-2 w-full'>
-                        {/* <div className='flex items-center'>
+                        <div className='flex items-center'>
                             <h1 className='font-bold'>{tweet?.userDetails[0]?.name}</h1>
-                            <p className='text-gray-500 text-sm ml-1'>{`@${tweet?.userDetails[0]?.username} . ${timeSince(tweet?.createdAt)}`}</p>
-                        </div> */}
+                            <p className='text-gray-500 text-sm ml-1'>{`@${tweet?.userDetails[0]?.username} . 1m`}</p>
+                        </div>
                         <div>
                             <p>{tweet?.description}</p>
                         </div>

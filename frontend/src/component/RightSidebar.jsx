@@ -2,7 +2,7 @@ import React from 'react'
 import { CiSearch } from "react-icons/ci";
 import Avatar from "react-avatar";
 import { Link } from 'react-router-dom';
-function RightSidebar({otherUsers}) {
+function RightSidebar({ otherUsers }) {
     return (
         <div className='w-[25%] '>
             <div className=' flex items-center p-2 bg-gray-100 rounded-full outline-none w-full '>
@@ -19,7 +19,7 @@ function RightSidebar({otherUsers}) {
                                 <div key={user?._id} className='flex items-center justify-between my-3'>
                                     <div className='flex'>
                                         <div>
-                                            <Avatar src="https://pbs.twimg.com/profile_images/1703261403237502976/W0SFbJVS_400x400.jpg" size="40" round={true} />
+                                            <Avatar src="https://pbs.twimg.com/profile_images/1750937589022892033/nea_yxSK_400x400.jpg" size="40" round={true} />
 
                                         </div>
                                         <div className='ml-2'>
@@ -29,7 +29,7 @@ function RightSidebar({otherUsers}) {
                                     </div>
                                     <div>
                                         <Link to={`/profile/${user?._id}`}>
-                                        <button className='px-4 py-1 bg-black text-white rounded-full'>Profile</button>
+                                            <button className='px-4 py-1 bg-black text-white rounded-full'>Profile</button>
                                         </Link>
 
                                     </div>

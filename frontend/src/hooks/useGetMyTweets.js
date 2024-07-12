@@ -6,7 +6,7 @@ import { getAllTweets } from "../redux/tweetSlice";
 
 const useGetMyTweets = (id) => {
     const dispatch = useDispatch();
-    // const { refresh, isActive } = useSelector(store => store.tweet);
+    const { refresh} = useSelector(store => store.tweet);
 
 
     useEffect(() => {
@@ -22,7 +22,7 @@ const useGetMyTweets = (id) => {
             }
         }
         fetchMyTweets();
-    }, [id])
+    }, [refresh])
     // const followingTweetHandler = async () => {
     //     try {
     //         axios.defaults.withCredentials = true;
