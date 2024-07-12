@@ -1,7 +1,6 @@
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
 import userSlice from "./userSlice";
-// import userSlice from "./userSlice";
-// import tweetSlice from "./tweetSlice";
+import tweetSlice from "./tweetSlice";
 
 // import {
 //     persistStore,
@@ -29,7 +28,8 @@ import userSlice from "./userSlice";
 
 const store = configureStore({
     reducer: {
-        user:userSlice
+        user: userSlice,
+        tweet: tweetSlice
     }
     // middleware: (getDefaultMiddleware) =>
     //     getDefaultMiddleware({

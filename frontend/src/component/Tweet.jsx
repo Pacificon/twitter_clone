@@ -52,14 +52,14 @@ const Tweet = ({ tweet }) => {
                             <p className='text-gray-500 text-sm ml-1'>{`@${tweet?.userDetails[0]?.username} . ${timeSince(tweet?.createdAt)}`}</p>
                         </div> */}
                         <div>
-                            {/* <p>{tweet?.description}</p> */}
+                            <p>{tweet?.description}</p>
                         </div>
                         <div className='flex justify-between my-3'>
                             <div className='flex items-center'>
                                 <div className='p-2 hover:bg-green-200 rounded-full cursor-pointer'>
                                     <FaRegComment size="20px" />
                                 </div>
-                                <p>0</p>
+                                <p>{tweet?.like?.length}</p>
                             </div>
                             <div className='flex items-center'>
                                 <CiHeart size="24px" />
