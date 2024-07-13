@@ -20,7 +20,7 @@ app.use(express.json());
 app.use(cookieParser());
 
 const corsOptions = {
-    origin: "https://twitter-clone-woad-nine.vercel.app/login",
+    origin: "http://localhost:5173",
     credentials: true
 }
 app.use(cors(corsOptions));
